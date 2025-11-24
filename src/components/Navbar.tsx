@@ -37,8 +37,14 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between">
           <a
-            href="#home"
-            className="text-cosmic-white text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2"
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('home');
+              section?.scrollIntoView({ behavior: 'smooth' });
+              window.history.pushState({}, '', '/');
+            }}
+            href="/"
+            className="text-cosmic-white text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2 cursor-pointer"
           >
             <div className="relative w-8 h-8 bg-gradient-to-br from-cosmic-purple to-cosmic-pink rounded-full flex items-center justify-center">
               <div className="absolute inset-0.5 bg-cosmic-dark rounded-full"></div>
@@ -51,8 +57,14 @@ const Navbar: React.FC = () => {
             {menuItems.map((item) => (
               <li key={item.name}>
                 <a
-                  href={item.href}
-                  className="text-cosmic-silver hover:text-cosmic-white text-sm font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-cosmic-lavender after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const section = document.getElementById(item.href.replace('#', ''));
+                    section?.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState({}, '', item.href.replace('#', '/'));
+                  }}
+                  href={item.href.replace('#', '/')}
+                  className="text-cosmic-silver hover:text-cosmic-white text-sm font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-cosmic-lavender after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 cursor-pointer"
                 >
                   {item.name}
                 </a>
@@ -101,9 +113,15 @@ const Navbar: React.FC = () => {
           {menuItems.map((item) => (
             <li key={item.name}>
               <a
-                href={item.href}
-                className="text-cosmic-silver hover:text-cosmic-white text-lg font-medium block transition-colors duration-200"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.getElementById(item.href.replace('#', ''));
+                  section?.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState({}, '', item.href.replace('#', '/'));
+                  setMobileMenuOpen(false);
+                }}
+                href={item.href.replace('#', '/')}
+                className="text-cosmic-silver hover:text-cosmic-white text-lg font-medium block transition-colors duration-200 cursor-pointer"
               >
                 {item.name}
               </a>

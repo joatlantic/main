@@ -77,17 +77,29 @@ const Hero: React.FC = () => {
             className="opacity-0 flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <a
-              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById('contact');
+                section?.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState({}, '', '/contact');
+              }}
+              href="/contact"
               aria-label="تواصل معي"
-              className="cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cosmic-lavender focus:ring-offset-2 focus:ring-offset-cosmic-dark relative overflow-hidden group btn-shine glow-pulse hover:scale-105"
+              className="cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cosmic-lavender focus:ring-offset-2 focus:ring-offset-cosmic-dark relative overflow-hidden group btn-shine glow-pulse hover:scale-105 cursor-pointer"
             >
               <span className="relative z-10">تواصل معي</span>
               <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 bg-gradient-to-r from-cosmic-purple/40 to-cosmic-pink/40 origin-left transition-transform duration-500 ease-out -z-10"></span>
             </a>
             <a
-              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById('projects');
+                section?.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState({}, '', '/projects');
+              }}
+              href="/projects"
               aria-label="شاهد أعمالي"
-              className="text-cosmic-silver hover:text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none flex items-center group"
+              className="text-cosmic-silver hover:text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none flex items-center group cursor-pointer"
             >
               شاهد أعمالي
               <svg

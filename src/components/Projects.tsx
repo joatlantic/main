@@ -144,8 +144,14 @@ const Projects: React.FC = () => {
 
         <div className="mt-20 text-center">
           <a
-            href="#contact"
-            className="inline-flex items-center cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out relative overflow-hidden group"
+            onClick={(e) => {
+              e.preventDefault();
+              const section = document.getElementById('contact');
+              section?.scrollIntoView({ behavior: 'smooth' });
+              window.history.pushState({}, '', '/contact');
+            }}
+            href="/contact"
+            className="inline-flex items-center cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out relative overflow-hidden group cursor-pointer"
           >
             <span className="relative z-10 flex items-center">
               لنعمل معاً
