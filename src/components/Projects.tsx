@@ -68,7 +68,7 @@ const projectsData = [
 const Projects: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -81,11 +81,11 @@ const Projects: React.FC = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -94,39 +94,39 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       ref={sectionRef}
       className="relative py-28 lg:py-40 bg-cosmic-dark"
     >
       {/* Decorative elements */}
-      <div 
+      <div
         className="absolute inset-0 opacity-40 -z-10"
         style={{
           backgroundImage: 'radial-gradient(circle at 25% 40%, rgba(79, 70, 229, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 60%, rgba(236, 72, 153, 0.15) 0%, transparent 50%)'
         }}
         aria-hidden="true"
       />
-      
+
       <div className="absolute top-0 right-0 w-72 h-72 bg-cosmic-purple/10 rounded-full blur-3xl -z-10" aria-hidden="true" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cosmic-pink/10 rounded-full blur-3xl -z-10" aria-hidden="true" />
-      
+
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-20 lg:mb-32">
           <div className="inline-block mb-6 px-5 py-2 rounded-full cosmic-glass">
             <span className="text-sm font-medium text-cosmic-lavender">عرض أعمالي</span>
           </div>
-          
+
           <h2 dir="rtl" className="text-3xl md:text-5xl font-bold mb-8 lg:mb-12 tracking-tighter text-cosmic-white leading-tight lg:leading-normal">
             <span className="text-gradient bg-gradient-to-r from-cosmic-lavender via-cosmic-purple to-cosmic-pink bg-clip-text text-transparent inline-block py-1">مشاريع</span> مميزة
           </h2>
-          
+
           <p dir="rtl" className="text-cosmic-silver text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             استكشف مجموعة من أهم مشاريعي، كل منها مصمم بعناية فائقة وابتكار إبداعي.
           </p>
         </div>
-        
-        <div 
+
+        <div
           ref={cardsRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-10"
         >
@@ -141,27 +141,27 @@ const Projects: React.FC = () => {
             />
           ))}
         </div>
-        
+
         <div className="mt-20 text-center">
-          <a 
+          <a
             href="#contact"
             className="inline-flex items-center cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out relative overflow-hidden group"
           >
             <span className="relative z-10 flex items-center">
-              <svg 
-                className="ml-3 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300 rotate-180" 
-                fill="none" 
+              لنعمل معاً
+              <svg
+                className="mr-3 h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300 rotate-180"
+                fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-              لنعمل معاً
             </span>
             <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 bg-gradient-to-r from-cosmic-purple/30 to-cosmic-pink/30 origin-left transition-transform duration-500 ease-out -z-10"></span>
           </a>

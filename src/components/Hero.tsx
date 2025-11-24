@@ -77,26 +77,29 @@ const Hero: React.FC = () => {
             className="opacity-0 flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <a
+              href="#contact"
+              aria-label="تواصل معي"
+              className="cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cosmic-lavender focus:ring-offset-2 focus:ring-offset-cosmic-dark relative overflow-hidden group btn-shine glow-pulse hover:scale-105"
+            >
+              <span className="relative z-10">تواصل معي</span>
+              <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 bg-gradient-to-r from-cosmic-purple/40 to-cosmic-pink/40 origin-left transition-transform duration-500 ease-out -z-10"></span>
+            </a>
+            <a
               href="#projects"
+              aria-label="شاهد أعمالي"
               className="text-cosmic-silver hover:text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none flex items-center group"
             >
+              شاهد أعمالي
               <svg
                 className="mr-2 h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300 rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-              شاهد أعمالي
-            </a>
-            <a
-              href="#contact"
-              className="cosmic-glass border border-cosmic-lavender/50 bg-cosmic-purple/10 hover:bg-cosmic-purple/20 text-cosmic-white px-10 py-4 rounded-full font-medium transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-cosmic-lavender focus:ring-offset-2 focus:ring-offset-cosmic-dark relative overflow-hidden group btn-shine glow-pulse hover:scale-105"
-            >
-              <span className="relative z-10">تواصل معي</span>
-              <span className="absolute inset-0 scale-x-0 group-hover:scale-x-100 bg-gradient-to-r from-cosmic-purple/40 to-cosmic-pink/40 origin-left transition-transform duration-500 ease-out -z-10"></span>
             </a>
           </div>
         </div>
